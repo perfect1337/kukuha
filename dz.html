@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dz.css">
+</head>
+<body>
+    1. true + false:
+   - Результат: 1
+   - JavaScript преобразует true в число 1 и false в число 0, поэтому сумма будет равна 1.
+
+2. 12 / "6":
+   - Результат: 2
+   - JavaScript автоматически преобразует строку "6" в число перед выполнением деления.
+
+3. "number" + 15 + 3:
+   - Результат: "number153"
+   - JavaScript начинает конкатенацию строк с лева на право, поэтому числа 15 и 3 будут просто приклеены к строке "number".
+
+4. 15 + 3 + "number":
+   - Результат: "18number"
+   - Здесь числа складываются сначала, а затем результат конкатенируется со строкой "number".
+
+5. '1' > null:
+   - Результат: true
+   - При сравнении разных типов данных JavaScript приводит их к числовому типу, и null становится 0, поэтому '1' (как строка преобразуется в число) больше 0.
+
+6. "foo" + + "bar":
+   - Результат: "fooNaN"
+   - Здесь первый плюс преобразует строку "bar" в число NaN, поэтому результат будет конкатенация строки "foo" и строки "NaN".
+
+7. 'true' == true:
+   - Результат: false
+   - Строка 'true' не равна логическому значению true.
+
+8. false == 'false':
+   - Результат: false
+   - Логическое значение false не равно строке 'false'.
+
+9. null == '':
+   - Результат: false
+   - Сравнение значения null с пустой строкой возвращает false, потому что они разных типов данных.
+
+   <div id="nameArea" onclick="changeName()"></div>
+   <div class="calculator">
+       <input type="text" id="display" readonly>
+       <div class="keys">
+           <button onclick="addToDisplay('7')">7</button>
+           <button onclick="addToDisplay('8')">8</button>
+           <button onclick="addToDisplay('9')">9</button>
+           <button onclick="addToDisplay('+')">+</button>
+           <button onclick="addToDisplay('4')">4</button>
+           <button onclick="addToDisplay('5')">5</button>
+           <button onclick="addToDisplay('6')">6</button>
+           <button onclick="addToDisplay('-')">-</button>
+           <button onclick="addToDisplay('1')">1</button>
+           <button onclick="addToDisplay('2')">2</button>
+           <button onclick="addToDisplay('3')">3</button>
+           <button onclick="addToDisplay('*')">*</button>
+           <button onclick="clearDisplay()">C</button>
+           <button onclick="addToDisplay('0')">0</button>
+           <button onclick="calculateResult()">=</button>
+           <button onclick="addToDisplay('/')">/</button>
+       </div>
+
+
+
+       <h2>Добавить нового студента</h2>
+   <input type="text" id="nameInput" placeholder="Имя">
+   <input type="number" id="ageInput" placeholder="Возраст">
+   <input type="number" id="courseInput" placeholder="Курс"> 
+   <button onclick="addStudent()">Добавить студента</button>
+<div id="studentsList"></div>
+</div>
+
+
+
+
+<p>Ключевое слово this в JavaScript используется для ссылки на текущий объект, в контексте которого оно вызывается. Значение this зависит от того, как функция была вызвана, а не от того, где она была объявлена.
+Вот некоторые случаи, когда целесообразно использовать ключевое слово this:
+</p>
+<p>
+   . **Методы объекта**: Когда функция является методом объекта, this ссылается на сам объект, в контексте которого она была вызвана. Например:
+   const person = {
+       name: 'Alice',
+       greet: function() {
+           console.log('Привет, меня зовут ' + this.name);
+       }
+   };
+   person.greet(); // Выведет: Привет, меня зовут Alice
+   
+</p>
+<p>
+   2. **Конструкторы**: В конструкторе this ссылается на новый экземпляр объекта, созданный с помощью оператора new. Например:
+   
+   function Person(name) {
+       this.name = name;
+   }
+   const alice = new Person('Alice');
+   console.log(alice.name); // Выведет: Alice
+   
+</p>
+<p>
+   3. **Обработчики событий**: В обработчиках событий this обычно ссылается на элемент, который вызвал событие. Например:
+   
+   const button = document.getElementById('myButton');
+   button.addEventListener('click', function() {
+       console.log('Нажата кнопка', this);
+   });
+</p>
+<p>
+   4. **Вызов функции в контексте объекта**: Используя методы call(), apply() или bind(), можно явно установить значение this для вызова функции. Например:
+   
+   function sayHello() {
+       console.log('Привет, меня зовут ' + this.name);
+   }
+   const person = { name: 'Bob' };
+   sayHello.call(person); // Выведет: Привет, меня зовут Bob
+</p>
+<p>
+   Использование this в JavaScript позволяет писать более гибкий и масштабируемый код, обеспечивая доступ к контексту выполнения функции и объекту, с которым она связана. Однако следует быть внимательным при использовании this, чтобы избежать ошибок и неправильного определения контекста.
+</p>
+
+
+
+
+
+   </body>
+   </html>
+   
+</body>
+<script src="dz.js"></script>
+</html>
