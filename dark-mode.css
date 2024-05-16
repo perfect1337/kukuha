@@ -7,10 +7,14 @@
     }
 }
 .tema{
-    width: 3vw;
-    height: 1vw;
+    width: max-content;
+    height:  2.2vw;
     font-size: 1.5vw;
+    padding: 0.5vw;
     background-color: #414141;
+    border: black solid 2px;
+    border-radius: 1.52vw 1.52vw  1.52vw  1.52vw; 
+    margin-top: 2vw;
 }
 .main{
     display: flex;
