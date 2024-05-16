@@ -646,6 +646,7 @@ text-align: center;
     border-radius: 1.62vw;
     font-size: 1.16vw;
     font-family: Readex Pro;
+    background-color: #7c7c7c;
 }
 .img9{
     margin-top: 1vw;
@@ -777,6 +778,7 @@ width:  8.67vw;
     width: max-content;
     height: 2.53vw;
     border-radius:1.26vw;
+    background-color: #7c7c7c;
 }
 .ikons1{
     display: flex;
