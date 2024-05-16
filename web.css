@@ -1229,10 +1229,15 @@ width:  8.67vw;
     }
 }
 .tema{
-    width: 3vw;
-    height: 1vw;
-    font-size: 1.5vw;
-    background-color: white;
+        width: max-content;
+        height:  2.2vw;
+        font-size: 1.5vw;
+        padding: 0.5vw;
+        background-color: white;
+        border: black solid 2px;
+        border-radius: 1.52vw 1.52vw  1.52vw  1.52vw; 
+        margin-top: 2vw;
+    
 }
 .zag21{
     font-family: Readex Pro;
