@@ -1,3 +1,9 @@
+document.addEventListener("DOMContentLoaded", function(event) {
+    // Скрываем анимацию и показываем контент после загрузки страницы
+    document.querySelector('.loader-wrapper').style.display = 'none';
+    document.querySelector('.content').style.display = 'block';
+  });
+  
 let x=10;
 let xType= typeof x; // opred tip
 if (xType === 'number'){
