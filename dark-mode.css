@@ -83,6 +83,7 @@
     z-index: 0;
     position: relative;
     display: flex;
+    box-shadow: 0px 0.2vw 1.77vw 0px #000000;
 }
 .left2{
     margin-bottom: 0.8vw;
@@ -840,6 +841,7 @@ width:  8.67vw;
     margin-left: 16.16vw;
     border: 1px solid #171515;
     border-radius: 1.01vw;
+    box-shadow: 0px 0.2vw 1.77vw 0px #000000;
 }
 .txt12{
     font-family: Readex Pro;
