@@ -19,3 +19,9 @@ switchMode.onclick = function(){
     // Сохраняем выбранную тему в localStorage
     localStorage.setItem('theme', theme.href);
 }
+document.addEventListener("DOMContentLoaded", function(event) {
+    // Скрываем анимацию и показываем контент после загрузки страницы
+    document.querySelector('.loader-wrapper').style.display = 'none';
+    document.querySelector('.content').style.display = 'block';
+  });
+  
