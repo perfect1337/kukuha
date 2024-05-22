@@ -1,16 +1,19 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-    // Скрываем анимацию и показываем контент после загрузки страницы
-    document.querySelector('.loader-wrapper').style.display = 'none';
-    document.querySelector('.content').style.display = 'block';
-  });
-  
-let x=10;
-let xType= typeof x; // opred tip
-if (xType === 'number'){
-    console.log('chislo');
-} else if (xType=== 'string'){
-    console.log('str');
-}   else console.log(' ne str ne num');
+// Запрашиваем данные у пользователя
+let userInput = prompt("Введите данные:");
+
+// Определяем тип данных
+let dataType;
+    
+if (!isNaN(userInput)) {
+    dataType = "number";
+} else {
+    dataType = typeof userInput;
+}
+
+// Выводим результат
+alert("Вы ввели: " + userInput + "\nТип данных: " + dataType);
+
+
 
 let zodiacN = prompt(' vved znak zodiac');
 switch ( zodiacN.toLowerCase()){ //proverka i vivod znaka switch - proverka 
@@ -94,11 +97,11 @@ function amst(number) {
     while (temp > 0) {
         let digit = temp % 10;
         sum += Math.pow(digit, 3);
-        temp = Math.floor(temp / 10);
+        temp = Math.floor(temp / 10);  // floor - okrug v mensh stor
     }
     return sum === number;
 }
-let number5 = 371; // trehznach dlya proverki
+let number5 = prompt("Введите armstronga:");
 if (amst(number5)) {
     console.log(number5 + " amst.");
 } else {
@@ -289,7 +292,7 @@ function StudentINPIT(name, age, course) {
     this.course = course;
 }
 
-StudentINPIT.prototype.getInfo = function() {
+StudentINPIT.prototype.getInfo = function() {   
     return "Студент " + this.name + ", возраст " + this.age + ", курс " + this.course;
 };
 
@@ -316,5 +319,100 @@ function displayStudents() {
         studentsList.appendChild(studentInfo);
     });
 }
+
+const quizContainer = document.getElementById('quizContainer');
+const resultContainer = document.getElementById('resultContainer');
+
+let answers = JSON.parse(localStorage.getItem('answers')) || [];
+
+const questions = [
+    "Какой жанр фильмов вы предпочитаете: комедии или драмы?",
+    "Какая тематика фильмов вас больше интересует: научная фантастика или документальные фильмы?",
+    "Выберите актера/актрису, чьи фильмы вам нравятся: Брэд Питт или Мерил Стрип?",
+    "Сколько вам лет?",
+    "Как вас зовут?"
+];
+
+const recommendations = {
+    comedies: "Вам могут понравиться фильмы '1+1' и 'Миллионер из трущоб'.",
+    dramas: "Рекомендую посмотреть фильмы 'Побег из Шоушенка' и 'Унесённые ветром'.",
+    sciFi: "Посмотрите фильмы 'Интерстеллар' и 'Матрица'.",
+    documentaries: "Вам понравятся документальные фильмы 'Космос' и 'Земля'.",
+    bradPitt: "Рекомендую посмотреть фильмы с участием Брэда Питта, например 'Бойцовский клуб' и 'Другие'.",
+    merylStreep: "Посмотрите фильмы с Мерил Стрип, такие как 'Дьявол носит Prada' и 'Железная леди'."
+};
+
+let currentQuestion = 0;
+
+function showQuestion() {
+    if (currentQuestion < questions.length) {
+        const questionElement = document.createElement('h3');
+        questionElement.textContent = questions[currentQuestion];
+
+        const inputElement = document.createElement('input');
+        inputElement.type = 'text';
+        inputElement.id = 'answer' + (currentQuestion + 1);
+        inputElement.value = answers[currentQuestion] || '';
+        inputElement.required = true;
+
+        const buttonElement = document.createElement('button');
+        buttonElement.textContent = 'Далее';
+        buttonElement.addEventListener('click', function() {
+            answers[currentQuestion] = document.getElementById('answer' + (currentQuestion + 1)).value;
+            localStorage.setItem('answers', JSON.stringify(answers));
+            currentQuestion++;
+            showQuestion();
+        });
+
+        quizContainer.innerHTML = '';
+        quizContainer.appendChild(questionElement); //вставить в конец какого-либо другой элемент.
+        quizContainer.appendChild(inputElement);
+        quizContainer.appendChild(buttonElement);
+    } else {
+        showRecommendation();
+    }
+}
+
+function showRecommendation() {
+    let recommendation = '';
+
+    if (answers[0].toLowerCase() === 'комедии') {
+        recommendation += recommendations.comedies + "<br>";
+    } else if (answers[0].toLowerCase() === 'драмы') {
+        recommendation += recommendations.dramas + "<br>";
+    }
+
+    if (answers[1].toLowerCase() === 'научная фантастика') {
+        recommendation += recommendations.sciFi + "<br>";
+    } else if (answers[1].toLowerCase() === 'документальные фильмы') {
+        recommendation += recommendations.documentaries + "<br>";
+    }
+
+    if (answers[2].toLowerCase() === 'брэд питт') {
+        recommendation += recommendations.bradPitt;
+    } else if (answers[2].toLowerCase() === 'мерил стрип') {
+        recommendation += recommendations.merylStreep;
+    }
+    else recommendation= ('Мы не знаем чем вам помочь');
+
+    resultContainer.innerHTML = '';
+    
+    const headingElement = document.createElement('h2');
+    headingElement.textContent = 'Рекомендации:';
+    
+    const paragraphElement = document.createElement('p');
+    paragraphElement.innerHTML = recommendation;
+
+    resultContainer.appendChild(headingElement);
+    resultContainer.appendChild(paragraphElement);
+}
+
+showQuestion();
+document.addEventListener("DOMContentLoaded", function(event) {
+    // Скрываем анимацию и показываем контент после загрузки страницы
+    document.querySelector('.loader-wrapper').style.display = 'none';
+    document.querySelector('.content').style.display = 'block';
+  });
+  
 
 
