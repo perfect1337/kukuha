@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form" method="post">
+        <div> Едите ли вы с детьми? <br>
+            <select name="kid">
+                <option>Любой</option>
+                <option value="Да">Да</option>
+                <option value="Нет">Нет</option>
+            </select>
+        </div>
+        <div> Выберите страну которую вы хотели бы посетить<br>
+            <select name="strana">
+                <option>Любой</option>
+                <option value="Россия">Россия</option>
+                <option value="США">США</option>
+                <option value="Испания">Испания</option>
+                <option value="Корея">Корея</option>
+                <option value="Норвегия">Норвегия</option>
+                <option value="Великобритания">Великобритания</option>
+                <option value="Турция">Турция</option>
+            </select>
+        </div>
+        <div> Выберите ваш бюджет <br>
+            <select name="price"> 
+                <option>Любой</option>
+                <option value="d20">до 20000 рублей</option>
+                <option value="d50">до 50000 рублей</option>
+                <option value="d200">до 200000 рублей</option>
+                <option value="dbez">неограничен</option>
+            </select>
+        </div>
+        <div>Какой тип отдыха вы предпочитаете?<br>
+            <select name="tip">
+                <option>Любой</option>
+                <option value="Активный">Активный</option>
+                <option value="Пассивный">Пассивный</option>
+            </select>
+        </div>
+        <div> Сколько вам лет? <br>
+            <select name="vozrast">
+                <option>Любой</option>
+                <option value="18+">18+</option>
+                <option value="30+">30+</option>
+                <option value="50+">50+</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit" id="knopochka">Отправить</button>
+        </div>
+    </form>
+    <div>
+        <a id="recomendation"></a>
+    </div>
+</body>
+    <script src="index6.js"></script>
+</html>
