@@ -1230,14 +1230,8 @@ input#input2 {
     }
 
     .txt6 {
-        color: black;
-        font-family: Readex Pro;
-        font-size: 0;
-        font-weight: 400;
-        line-height: 0.85vw;
-        text-align: left;
-        margin-left: 25.83vw;
-        margin-top: 1.61vw;
+        font-size: 2vw;
+        margin-top: 1.4vw;
     }
 
     .txt7 {
