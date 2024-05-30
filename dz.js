@@ -91,7 +91,7 @@ for (let i = 0; i < 1000; i++) {
 }
 console.log(sum);
 
-function amst(number) {
+function amst(number5) {
     let sum = 0;
     let temp = number;
     while (temp > 0) {
