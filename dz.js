@@ -90,10 +90,10 @@ for (let i = 0; i < 1000; i++) {
     }
 }
 console.log(sum);
-
+let number5 = prompt("Введите armstronga:");
 function amst(number5) {
     let sum = 0;
-    let temp = number;
+    let temp = number5;
     while (temp > 0) {
         let digit = temp % 10;
         sum += Math.pow(digit, 3);
@@ -101,7 +101,7 @@ function amst(number5) {
     }
     return sum === number;
 }
-let number5 = prompt("Введите armstronga:");
+
 if (amst(number5)) {
     console.log(number5 + " amst.");
 } else {
@@ -320,8 +320,6 @@ function displayStudents() {
     });
 }
 
-
-showQuestion();
 document.addEventListener("DOMContentLoaded", function(event) {
     // Скрываем анимацию и показываем контент после загрузки страницы
     document.querySelector('.loader-wrapper').style.display = 'none';
