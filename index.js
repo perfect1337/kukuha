@@ -35,26 +35,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
     document.querySelector('.loader-wrapper').style.display = 'none';
     document.querySelector('.content').style.display = 'block';
   });
-  /* ANIMATION */
-
-let option= {
-    root: null,
-    rootMargin: '5px',
-    threshold: 0.5
-}
-
-let callback= function(entries, observer) {
-  entries.forEach(entry =>{
-     if (entry.isIntersecting){
-        console.log('find', entry);
-        entry.target.classList.add('active');
-     }
-  });
-}
-let observer = new IntersectionObserver(callback, option);
-
-let target =  document.querySelectorAll('.anim')
-target.forEach(target => {
-    observer.observe(target);
-});
 
