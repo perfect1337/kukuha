@@ -4,6 +4,7 @@ let k=0;
 rec=localStorage.getItem("reci");
 document.getElementById("recomendation").innerHTML = (rec);
 form.addEventListener("submit", e => {
+     e.preventDefault(); // Добавляем эту строку
     rec="Рекомендуем посетить: ";
     const kid=form.querySelector('[name="kid"]');
     const strana=form.querySelector('[name="strana"]');
